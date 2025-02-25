@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE "escalas" ALTER COLUMN "km_inicial" SET DATA TYPE TEXT,
+ALTER COLUMN "km_final" SET DATA TYPE TEXT,
+ALTER COLUMN "situacao" SET DATA TYPE TEXT;
