@@ -5,7 +5,7 @@ class ListEscalaController{
     async handle(req: Request, res: Response): Promise<any>{
         const listEscalaService = new ListEscalaService();
 
-        const escalas = listEscalaService.execute();
+        const escalas = await listEscalaService.execute();
         return res.json(escalas);
     }
 }

@@ -21,7 +21,7 @@ class CreateEscalaService{
                 data_inicio: new Date(data_inicio),
                 km_final,
                 km_inicial,
-                situacao,
+                situacao: "Aberto",
                 turno,
                 user_id,
                 veiculo_id

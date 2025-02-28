@@ -14,6 +14,7 @@ import { CreateEscalaEquipeController } from "./controllers/escala/escala_equipe
 import { ListBaseController } from "./controllers/base/ListBaseController";
 import { ListVeiculoController } from "./controllers/veiculo/ListVeiculoController";
 import { ListEscalaController } from "./controllers/escala/ListEscalaController";
+import { ListProfissionalController } from "./controllers/profissional/ListProfissionalController";
 
 const router = Router();
 
@@ -36,6 +37,7 @@ router.post("/funcao", isAuthenticated, new CreateFuncaoController().handle);
 
 //Profissional
 router.post("/profissional", isAuthenticated, new CreateProfissionalController().handle);
+router.get("/profissional", isAuthenticated, new ListProfissionalController().handle)
 
 //Escala
 router.post("/escala", isAuthenticated, new CreateEscalaController().handle)

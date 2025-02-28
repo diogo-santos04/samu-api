@@ -116,7 +116,6 @@ model EscalaEquipe{
   id Int @id @default(autoincrement())
   escala_id Int
   profissional_id Int
-  funcao_id Int
   created_at DateTime? @default(now())
   updated_at DateTime? @default(now())
 
