@@ -16,6 +16,8 @@ import { ListVeiculoController } from "./controllers/veiculo/ListVeiculoControll
 import { ListEscalaController } from "./controllers/escala/ListEscalaController";
 import { ListProfissionalController } from "./controllers/profissional/ListProfissionalController";
 import { DeleteEscalaController } from "./controllers/escala/DeleteEscalaController";
+import { GetEscalaController } from "./controllers/escala/GetEscalaController";
+import { EditEscalaController } from "./controllers/escala/EditEscalaController";
 
 const router = Router();
 
@@ -41,9 +43,11 @@ router.post("/profissional", isAuthenticated, new CreateProfissionalController()
 router.get("/profissional", isAuthenticated, new ListProfissionalController().handle)
 
 //Escala
-router.post("/escala", isAuthenticated, new CreateEscalaController().handle)
-router.get("/escala", isAuthenticated, new ListEscalaController().handle)
-router.post("/escala_equipe", isAuthenticated, new CreateEscalaEquipeController().handle)
-router.delete("/escala/:id", isAuthenticated, new DeleteEscalaController().handle)
+router.post("/escala", isAuthenticated, new CreateEscalaController().handle) //salva escala
+router.get("/escala", isAuthenticated, new ListEscalaController().handle) // pegar todas as escalas
+router.post("/escala_equipe", isAuthenticated, new CreateEscalaEquipeController().handle) // salvar escala equipe
+router.delete("/escala/:id", isAuthenticated, new DeleteEscalaController().handle) // deleta
+router.get("/escala/:id", isAuthenticated, new GetEscalaController().handle) //pegar escala a ser atualizada
+router.put("/escala/:id", isAuthenticated, new EditEscalaController().handle) // atualiza
 
 export { router }

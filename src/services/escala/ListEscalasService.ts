@@ -1,6 +1,6 @@
 import prismaClient from "../../prisma";
 
-class ListEscalaService{
+class ListEscalasService{
     async execute(){
         const escalas = await prismaClient.escala.findMany({
             include: {
@@ -15,4 +15,4 @@ class ListEscalaService{
     }
 }
 
-export { ListEscalaService }
+export { ListEscalasService }

@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
-import { ListEscalaService } from "../../services/escala/ListEscalaService";
+import { ListEscalasService } from "../../services/escala/ListEscalasService";
 
 class ListEscalaController{
     async handle(req: Request, res: Response): Promise<any>{
-        const listEscalaService = new ListEscalaService();
+        const listEscalasService = new ListEscalasService();
 
-        const escalas = await listEscalaService.execute();
+        const escalas = await listEscalasService.execute();
         return res.json(escalas);
     }
 }
