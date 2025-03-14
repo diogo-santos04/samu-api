@@ -18,6 +18,8 @@ import { ListProfissionalController } from "./controllers/profissional/ListProfi
 import { DeleteEscalaController } from "./controllers/escala/DeleteEscalaController";
 import { GetEscalaController } from "./controllers/escala/GetEscalaController";
 import { EditEscalaController } from "./controllers/escala/EditEscalaController";
+import { GetEscalaEquipeController } from "./controllers/escala/escala_equipe/GetEscalaEquipeController";
+import { EditEscalaEquipeController } from "./controllers/escala/escala_equipe/EditEscalaEquipeController";
 
 const router = Router();
 
@@ -25,6 +27,7 @@ const router = Router();
 router.post("/users", new CreateUserController().handle);
 router.post("/session", new AuthUserController().handle);
 router.get("/me", isAuthenticated, new DetailsUserController().handle);
+router.get("/validate-token", isAuthenticated)
 
 //BASE
 router.post("/base",isAuthenticated, new CreateBaseController().handle);
@@ -49,5 +52,7 @@ router.post("/escala_equipe", isAuthenticated, new CreateEscalaEquipeController(
 router.delete("/escala/:id", isAuthenticated, new DeleteEscalaController().handle) // deleta
 router.get("/escala/:id", isAuthenticated, new GetEscalaController().handle) //pegar escala a ser atualizada
 router.put("/escala/:id", isAuthenticated, new EditEscalaController().handle) // atualiza
+router.get("/escala_equipe/:id", isAuthenticated, new GetEscalaEquipeController().handle)
+router.put("/escala_equipe", isAuthenticated, new EditEscalaEquipeController().handle)
 
 export { router }
